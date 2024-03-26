@@ -4,7 +4,7 @@ namespace task_4_1
 {
     abstract class ArrayBase<T> : IArrayBase<T>
     {
-        const int default_size = 4;
+        const int default_size = 7;
         protected int array_size;
 
         //Создание массива с ёмкостью по умолчанию.

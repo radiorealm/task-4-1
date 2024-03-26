@@ -8,7 +8,11 @@ namespace task_4_1
         private int current_size = 0;
         private T[] array;
 
-        public OneDim(int array_size = 0) : base(array_size)
+        public OneDim(int array_size) : base(array_size)
+        {
+            array = new T[array_size];
+        }
+        public OneDim()
         {
             array = new T[array_size];
         }
@@ -40,11 +44,13 @@ namespace task_4_1
 
         public override void Remove(T element)
         {
+            current_size--;
+
             int index = FindIndex(element);
 
             if (index != -1)
             {
-                Array.Copy(array, index + 1, array, index, array_size - index - 1);
+                Array.Copy(array, index + 1, array, index, array_size - index);
             }
         }
 
@@ -112,7 +118,7 @@ namespace task_4_1
 
         private int FindIndex(Func<T, bool> func)
         {
-            for (int i = 0; i < array_size; i++)
+            for (int i = 0; i < current_size; i++)
             {
                 if (func(array[i]))
                 {
