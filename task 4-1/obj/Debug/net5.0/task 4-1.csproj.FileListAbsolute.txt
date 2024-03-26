@@ -1,0 +1,16 @@
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\bin\Debug\net5.0\task 4-1.exe
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\bin\Debug\net5.0\task 4-1.deps.json
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\bin\Debug\net5.0\task 4-1.runtimeconfig.json
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\bin\Debug\net5.0\task 4-1.runtimeconfig.dev.json
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\bin\Debug\net5.0\task 4-1.dll
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\bin\Debug\net5.0\ref\task 4-1.dll
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\bin\Debug\net5.0\task 4-1.pdb
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.csproj.AssemblyReference.cache
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.AssemblyInfoInputs.cache
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.AssemblyInfo.cs
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.csproj.CoreCompileInputs.cache
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.dll
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\ref\task 4-1.dll
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.pdb
+C:\Users\Daxa\source\repos\task-4-1\task 4-1\obj\Debug\net5.0\task 4-1.genruntimeconfig.cache
