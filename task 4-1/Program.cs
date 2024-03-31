@@ -18,7 +18,8 @@ namespace task_4_1
             {
                 custom_array.Add(int.Parse(Console.ReadLine()));
             }
-            custom_array.Print();
+            Console.WriteLine("Print using Foreach");
+            custom_array.Foreach((x) => Console.WriteLine(x));
 
             Console.WriteLine("First even element");
             Console.WriteLine(custom_array.Find(t => t % 2 == 0));

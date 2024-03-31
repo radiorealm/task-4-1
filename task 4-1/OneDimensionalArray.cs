@@ -8,38 +8,22 @@ namespace task_4_1
         private int current_size = 0;
         private T[] array;
 
+        //do constructor chain?
         public OneDim(int array_size) : base(array_size)
         {
             array = new T[array_size];
         }
-        public OneDim()
-        {
-            array = new T[array_size];
-        }
+        public OneDim() { }
 
         public override void Add(T element)
         {
-            if (current_size < array_size)
+            if (current_size >= array_size)
             {
-                array[current_size] = element;
+                array_size = array_size * 2 + 1;
+                Array.Resize(ref array, array_size);
             }
-            else
-            {
-                Resize();
-                Add(element);
-            }
+            array[current_size] = element;
             current_size++;
-        }
-
-        private void Resize()
-        {
-            T[] Array = new T[array_size * 2 + 1];
-            for (int i = 0; i < array_size; i++)
-            {
-                Array[i] = array[i];
-            }
-            array = Array;
-            array_size = array_size * 2 + 1;
         }
 
         public override void Remove(T element)
@@ -54,12 +38,12 @@ namespace task_4_1
             }
         }
 
-        public override int Length(Func<T, bool> func)
+        public override int Length(Func<T, bool> condition)
         {
             int ans = 0;
             for (int i = 0; i < array_size; i++)
             {
-                if (func(array[i]))
+                if (condition(array[i]))
                 {
                     ans += 1;
                 }
@@ -76,19 +60,40 @@ namespace task_4_1
             return FindIndex(element) != -1;
         }
 
-        public override T Find(Func<T, bool> func)
+        public override void Reverse()
         {
-            return array[FindIndex(func)];
+            T[] _array = new T[array_size];
+
+            for (int i = 0; i < array_size; i++)
+            {
+                _array[i] = array[array_size - i - 1];
+            }
+
+            array = _array;
         }
 
-        public override T[] FindAll(Func<T, bool> func)
+        public override void Foreach(Action<T> action)
         {
-            T[] elements = new T[Length(func)];
+            for (int i = 0; i < array_size; i++)
+            {
+                action(array[i]);
+            }
+        }
+
+
+        public override T Find(Func<T, bool> condition)
+        {
+            return array[FindIndex(condition)];
+        }
+
+        public override T[] FindAll(Func<T, bool> condition)
+        {
+            T[] elements = new T[Length(condition)];
             int index = 0;
 
             for (int i = 0; i < array_size; i++)
             {
-                if (func(array[i]))
+                if (condition(array[i]))
                 {
                     elements[index] = array[i];
                     index++;
@@ -116,11 +121,11 @@ namespace task_4_1
             return elements;
         }
 
-        private int FindIndex(Func<T, bool> func)
+        private int FindIndex(Func<T, bool> condition)
         {
             for (int i = 0; i < current_size; i++)
             {
-                if (func(array[i]))
+                if (condition(array[i]))
                 {
                     return i;
                 }
@@ -139,12 +144,24 @@ namespace task_4_1
             return -1;
         }
 
+        public override TResult[] Projection<TResult>(Func<T, TResult> project)
+        {
+            TResult[] _array = new TResult[current_size];
+
+            for (int i = 0; i < current_size; i++)
+            {
+                _array[i] = project(array[i]);
+            }
+
+            return _array;
+        }
+
         public void Print()
         {
             foreach (T element in array)
             {
                 Console.Write($"{element} ");
-            }                
+            }
             Console.WriteLine();
         }
         public void Print(T[] _array)

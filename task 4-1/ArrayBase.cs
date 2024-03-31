@@ -13,7 +13,6 @@ namespace task_4_1
         {
             this.array_size = array_size;
         }
-
         public ArrayBase() : this(default_size) { }
 
         //Добавление элемента в массив. Если массив заполнен, увеличить его ёмкость по правилу 2n + 1 и добавить элемент на первую свободную позицию.
@@ -28,7 +27,7 @@ namespace task_4_1
         //Подсчет количества элементов в массиве.
         //Подсчет количества элементов в массиве, удовлетворяющих переданному условию.
         public abstract int Length();
-        public abstract int Length(Func<T, bool> func);
+        public abstract int Length(Func<T, bool> condition);
 
         //Проверка выполнения переданного условия хотя бы одного элемента массива.
         //Проверка выполнения переданного условия для всех элементов массива.
@@ -36,23 +35,25 @@ namespace task_4_1
         //Проверка наличия элемента в массиве.
         public abstract bool Check(T element);
 
-        //Получение первого элемента в массиве, удовлетворяющего условию.
-        public abstract T Find(Func<T, bool> func);
-
         //Применение переданного действия ко всем элементам массива.
+        public abstract void Foreach(Action<T> action);
+
+        //Получение первого элемента в массиве, удовлетворяющего условию.
+        public abstract T Find(Func<T, bool> condition);
 
         //Получение элементов массива, удовлетворяющих переданному условию.
         //Получение элементов массива выбранного типа.
-        public abstract T[] FindAll(Func<T, bool> func);
+        public abstract T[] FindAll(Func<T, bool> condition);
         public abstract T[] FindAll<TResult>();
 
         //Переворот массива.
-        //public abstract void Reverse();
+        public abstract void Reverse();
 
         //Получение минимального/максимального элемента массива.
         //Получение минимального/максимального элемента массива по его проекции.
 
         //Проекция элементов массива в другой тип.
+        public abstract TResult[] Projection<TResult>(Func<T, TResult> project);
 
         //Получить заданное количество элементов массива с указанного индекса.
 
